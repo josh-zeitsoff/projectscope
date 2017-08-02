@@ -1,30 +1,37 @@
-class ProgressBarController < ActionController
+class ProgressBarsController < ActionController
 
 
+  #display form to create new progress bar
   # GET /whitelists/new
   def new
+    #option to set iteration
+    #option to add items with description, order (status set auto)
     @progress_bar = ProgressBar.new
   end
 
   # GET /progress_bar
   def index
+    #make display @progress_bar in html file
     if current_user.is_student?
-      #redirect_to user progress bar
+      #want to set only to current teams progress bar within this iteration
     else
-      #redirect to instructor all progress bars
+      #want to get all for given iteration
+      @progress_bar = ProgressBar.all
     end
-    @items = Items.all
-
   end
 
+  #saves to db
   # POST /progress_bar/
   def create
+
+
   end
 
   # GET
   def show
   end
 
+  #destroys individual element?
   # DELETE /progress_bar/
   def destroy
       #set all items for this progress bar to nil
@@ -34,19 +41,19 @@ class ProgressBarController < ActionController
 
   # PATCH/PUT
   def update
-    #update status of all items
+    #update status of all items or single
     #for each item in current iteration:
     #status = get_status_from_view
     #timestamp = get_timestamp
-    #@transition = Transition.initialize(item, timestamp, status)
-    #transition.save      put transition in db
+    transition = Transition.initialize(item, timestamp, status)
     #redisplay? Or automatically done
+
 
   end
 
   # GET
   def edit
-    #change current progress_bar
+    # edit single item
   end
 
 

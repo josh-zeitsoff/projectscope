@@ -7,14 +7,33 @@ class Item < ActiveRecord::Base
   #order represents the order of the item in the iteration
 
   def new
+    self.save
   end
+
+  def initialize
+    self.status = 0
+  end
+
+
+  def set_iteration(iteration)
+    self.iteration = iteration
+    self.save
+  end
+
+  def iteration
+    self.iteration
+  end
+
 
   def update_status(status)
       self.status = status
       self.save
   end
 
-
+  def set_order(order)
+      self.order = order
+      self.save
+  end
 
   #need to figure out ordering within transition
 
