@@ -1,4 +1,4 @@
-class ProgressBarsController < ActionController
+class ProgressBarsController < ApplicationController
 
 
   #display form to create new progress bar
@@ -11,13 +11,17 @@ class ProgressBarsController < ActionController
 
   # GET /progress_bar
   def index
+    @items = Items.all
     #make display @progress_bar in html file
-    if current_user.is_student?
+    #if current_user.is_student?
       #want to set only to current teams progress bar within this iteration
-    else
+    #else
       #want to get all for given iteration
-      @progress_bar = ProgressBar.all
-    end
+      
+    #end
+  end
+
+  def home
   end
 
   #saves to db
