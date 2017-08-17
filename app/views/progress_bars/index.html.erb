@@ -1,7 +1,7 @@
 <div class="main">
   <div class="container">
     <h1>Progress Bar</h1>
-    <p>Testing</p>
+    <p>Home</p>
   </div>
 </div>
 
@@ -9,12 +9,13 @@
   <div class="container">
   
     <% @items.each do |item| %>
-    	<div class="item">
-      		<p class = "description"><%= item.description%> </p>
-      		<p class = "status"><%= item.status%> </p>
-          <p class = "order"><%= item.order%> </p>
-      		<p class="timestamp"><%= item.created_at %> </p>
-    	</div> 
+      <div class="item">
+          <p class = "description"> <p>Description:</p> <%= item.description%> </p>
+          <p class = "status"> <p>Status: </p>  <%= item.status%> </p>
+            <p class = "order"> <p>Order: </p> <%= item.order%> </p>
+            <p class = "iteration"> <p>Iteration: </p> <%= item.iteration%> </p>
+          <p class="timestamp"><%= item.created_at %> </p>
+      </div> 
    <% end %>
 
 

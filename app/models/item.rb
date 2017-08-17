@@ -1,5 +1,4 @@
 class Item < ActiveRecord::Base
-  belongs_to :iteration
   has_many :transitions
 
   #status represents if the item is done or not, either 0/1 or boolean

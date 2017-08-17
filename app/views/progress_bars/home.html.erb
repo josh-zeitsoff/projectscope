@@ -1,6 +1,29 @@
 <div class="main">
   <div class="container">
     <h1>Progress Bar</h1>
-    <p>Item 1</p>
+    <p>Home</p>
+  </div>
+</div>
+
+<div class="items">
+  <div class="container">
+  
+    <% @items.each do |item| %>
+      <div class="item">
+          <p class = "description"> <p>Description:</p> <%= item.description%> </p>
+          <% if item.status === 0 %>
+ 				<div class="green"> <%= item.status %> </div>
+		<% elsif  item.status == 1%>
+ 				<div class="yellow"> <%= item.status %> </div>
+ 		<% else %>
+ 				<div class="red"> <%= item.status %> </div>
+		<% end %>
+            <p class = "order"> <p>Order: </p> <%= item.order%> </p>
+            <p class = "iteration"> <p>Iteration: </p> <%= item.iteration%> </p>
+          <p class="timestamp"><%= item.created_at %> </p>
+      </div> 
+   <% end %>
+
+
   </div>
 </div>

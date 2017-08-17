@@ -23,9 +23,9 @@ Item.delete_all
 # slack_trends2 = File.read './db/fake_data/spline2.json'
 # slack_trends3 = File.read './db/fake_data/spline3.json'
 
-item1 = Item.create(description: "This is item3", status: 0, order:2)
-item2 = Item.create(description: "This is item2", status: 1, order:1)
-item3 = Item.create(description: "This is item1", status: 2, order:0)
+item1 = Item.create(description: "This is item3", status: 0, order:2, iteration:1)
+item2 = Item.create(description: "This is item2", status: 1, order:1, iteration:1)
+item3 = Item.create(description: "This is item1", status: 2, order:0, iteration:1)
 
 code_climate1 = File.read './db/fake_data/codeclimate1.json'
 code_climate2 = File.read './db/fake_data/codeclimate2.json'
