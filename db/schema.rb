@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20170817002741) do
   add_index "configs", ["project_id"], name: "index_configs_on_project_id"
 
   create_table "items", force: :cascade do |t|
-    t.string   "description"
+    t.string   "name"
     t.integer  "order"
     t.integer  "status"
     t.integer  "iteration"
