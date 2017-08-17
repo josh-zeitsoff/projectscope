@@ -11,7 +11,13 @@
     <% @items.each do |item| %>
       <div class="item">
           <p class = "description"> <p>Description:</p> <%= item.description%> </p>
-          <p class = "status"> <p>Status: </p>  <%= item.status%> </p>
+          <% if item.status === 0 %>
+        <div class="green"> <%= item.status %> </div>
+    <% elsif  item.status == 1%>
+        <div class="yellow"> <%= item.status %> </div>
+    <% else %>
+        <div class="red"> <%= item.status %> </div>
+    <% end %>
             <p class = "order"> <p>Order: </p> <%= item.order%> </p>
             <p class = "iteration"> <p>Iteration: </p> <%= item.iteration%> </p>
           <p class="timestamp"><%= item.created_at %> </p>
