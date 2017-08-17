@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get '/metrics/:metric/detail', to: 'projects#show_metric'
       get '/metrics/:metric/report', to: 'projects#show_report'
       get '/progress', to: 'progress_bars#index'
+      get '/all_progress', to: 'progress_bars#home'
   	end
   end
   resources :whitelists, :only => [:index] do

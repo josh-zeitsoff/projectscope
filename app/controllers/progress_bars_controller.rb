@@ -11,7 +11,7 @@ class ProgressBarsController < ApplicationController
 
   # GET /progress_bar
   def index
-    @items = Item.all
+    @items = Item.order(:order)
     #make display @progress_bar in html file
     #if current_user.is_student?
       #want to set only to current teams progress bar within this iteration
@@ -22,6 +22,7 @@ class ProgressBarsController < ApplicationController
   end
 
   def home
+    @items = Item.order(:order)
   end
 
   #saves to db

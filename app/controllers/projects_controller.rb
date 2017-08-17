@@ -186,7 +186,11 @@ class ProjectsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_project
-    @project = Project.includes(:configs).find(params[:id])
+    if params[:id] == 0
+        render 'progress_bars/home'
+    else 
+      @project = Project.includes(:configs).find(params[:id])
+    end
   end
 
   def init_existed_configs

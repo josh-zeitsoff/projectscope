@@ -10,26 +10,14 @@ class Item < ActiveRecord::Base
     self.save
   end
 
-  def initialize(description, status)
-    super
-    self.description = description  
-    self.status = status
-  end
-
-
   def set_iteration(iteration)
     self.iteration = iteration
     self.save
   end
 
-  def iteration
-    self.iteration
-  end
-
-
-  def update_status(status)
-      self.status = status
-      self.save
+  def update_status(new_status)
+      status = new_status
+      ssave
   end
 
   def set_order(order)

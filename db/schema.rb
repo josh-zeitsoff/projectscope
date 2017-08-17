@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170817195507) do
+ActiveRecord::Schema.define(version: 20170817202039) do
 
   create_table "basic_progress_bars", force: :cascade do |t|
     t.text     "description"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20170817195507) do
 
   create_table "items", force: :cascade do |t|
     t.string   "description"
-    t.integer  "order"
     t.integer  "status"
+    t.integer  "order"
     t.integer  "iteration"
     t.datetime "created_at"
     t.datetime "updated_at"
