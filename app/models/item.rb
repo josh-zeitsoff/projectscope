@@ -10,8 +10,10 @@ class Item < ActiveRecord::Base
     self.save
   end
 
-  def initialize
-    self.status = 0
+  def initialize(description, order)
+    super
+    self.description = description  
+    self.order = order
   end
 
 

@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="container">
+    <h1>Progress Bar</h1>
+    <p>Testing</p>
+  </div>
+</div>
+
+<div class="items">
+  <div class="container">
+  
+    <% @items.each do |item| %>
+    	<div class="items">
+      		<p class = "description"><%= item.description%> </p>
+      		<p class = "order"><%= item.order%> </p>
+      		<p class="timestamp"><%= item.created_at %> </p>
+    	</div> 
+   <% end %>
+
+
+  </div>
+</div>

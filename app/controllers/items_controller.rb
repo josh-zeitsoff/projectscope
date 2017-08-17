@@ -1,17 +1,37 @@
-class ProgressBarsController < ApplicationController
+class ItemsController < ApplicationController
 
 
   #display form to create new progress bar
   # GET /whitelists/new
-  def new
-    #option to set iteration
-    #option to add items with description, order (status set auto)
-    @progress_bar = ProgressBar.new
-  end
 
-  # GET /progress_bar
   def index
     @items = Item.all
+  end
+
+  def new
+    @item = Item.new
+  end
+  
+  #def create
+    #@item = Item.new(params[:description], params[:order], params[:status], params[:iteration])
+    #if @item.save
+    # redirect_to '/progress_bars'
+  #  else
+   #   render 'new'
+  # end
+  #end
+
+
+
+  #def new
+    #option to set iteration
+    #option to add items with description, order (status set auto)
+  #  @progress_bar = ProgressBar.new
+  #end
+
+  # GET /progress_bar
+  #def index
+   # @items = Item.all
     #make display @progress_bar in html file
     #if current_user.is_student?
       #want to set only to current teams progress bar within this iteration
@@ -19,7 +39,7 @@ class ProgressBarsController < ApplicationController
       #want to get all for given iteration
       
     #end
-  end
+  #end
 
   def home
   end

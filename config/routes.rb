@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   get '/login/:id', :to => 'application#passthru', :as => 'passthru'
 
-  get 'progress_bars' => 'progress_bars#home'
+  get 'progress_bars' => 'progress_bars#index'
 
   root 'projects#index'
 end

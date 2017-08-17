@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612211747) do
+ActiveRecord::Schema.define(version: 20170817002741) do
+
+  create_table "basic_progress_bars", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "order"
+    t.integer  "status"
+    t.integer  "iteration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer  "metric_sample_id"
@@ -39,6 +48,15 @@ ActiveRecord::Schema.define(version: 20170612211747) do
   end
 
   add_index "configs", ["project_id"], name: "index_configs_on_project_id"
+
+  create_table "items", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "order"
+    t.integer  "status"
+    t.integer  "iteration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "metric_samples", force: :cascade do |t|
     t.integer  "project_id"

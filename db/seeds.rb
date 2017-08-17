@@ -23,6 +23,10 @@ MetricSample.delete_all
 # slack_trends2 = File.read './db/fake_data/spline2.json'
 # slack_trends3 = File.read './db/fake_data/spline3.json'
 
+item1 = Item.create(description: "This is item1", order: 0)
+item2 = Item.create(description: "This is item2", order: 1)
+item3 = Item.create(description: "This is item3", order: 2)
+
 code_climate1 = File.read './db/fake_data/codeclimate1.json'
 code_climate2 = File.read './db/fake_data/codeclimate2.json'
 code_climate3 = File.read './db/fake_data/codeclimate3.json'
