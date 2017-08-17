@@ -13,7 +13,7 @@ User.delete_all
 Whitelist.delete_all
 Project.delete_all
 MetricSample.delete_all
-
+Item.delete_all
 
 # dummy1_code_climate = ProjectMetrics.class_for('code_climate').new url: 'http://github.com/AgileVentures/WebsiteOne'
 # dummy2_code_climate = ProjectMetrics.class_for('code_climate').new url: 'http://github.com/AgileVentures/project_metric_slack'

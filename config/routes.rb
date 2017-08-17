@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get '/metrics/:metric/series', :to => 'projects#get_metric_series'
       get '/metrics/:metric/detail', to: 'projects#show_metric'
       get '/metrics/:metric/report', to: 'projects#show_report'
+      get '/progress', to: 'progress_bars#index'
   	end
   end
   resources :whitelists, :only => [:index] do
@@ -28,8 +29,6 @@ Rails.application.routes.draw do
       :as => 'metric_sample_comments'
 
   get '/login/:id', :to => 'application#passthru', :as => 'passthru'
-
-  get 'progress_bars' => 'progress_bars#index'
 
   root 'projects#index'
 end
